@@ -125,21 +125,10 @@ int main(int argc, char **argv) {
       wb_robot_wwi_send_text(str_buffer);
     }
 
-    wb_robot_wwi_send_text("stop");
+    sprintf(str_buffer, "stop:%.2f", 100 * metric->performance);
+    wb_robot_wwi_send_text(str_buffer);
 
-    int waiting_answer = 1;
-
-    do {
-      const char *answer_message;
-      while ((answer_message = wb_robot_wwi_receive_text())) {
-        if (strncmp(answer_message, "record:", 7) == 0) {
-          robotbenchmark_record(answer_message, "wall_following", metric->performance);
-          waiting_answer = 0;
-        } else if (strcmp(answer_message, "exit") == 0)
-          waiting_answer = 0;
-      }
-
-    } while (wb_robot_step(time_step) != -1 && waiting_answer);
+    printf("performance_line:%f\n", metric->performance);
 
     wb_supervisor_simulation_set_mode(WB_SUPERVISOR_SIMULATION_MODE_PAUSE);
     free_wall_following_metric(metric);

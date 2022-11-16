@@ -67,7 +67,7 @@ void wall_following_metric_update(WallFollowingMetric *metric, const double *poi
   }
 }
 
-// Returns a pointer to a newly allocated and initilized WallFollowingMetric structure.
+// Returns a pointer to a newly allocated and initialized WallFollowingMetric structure.
 // If any argument is invalid, or if the memory allocation failed, a NULL pointer will be returned instead.
 WallFollowingMetric *create_new_wall_following_metric(const double *robot_starting_position,
                                                       const double *first_segment_position, const int *angles, int angles_n,

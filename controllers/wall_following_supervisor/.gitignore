@@ -1,1 +1,4 @@
 /wall_following_supervisor
+/build
+*.d
+*.o
