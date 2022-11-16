@@ -4,4 +4,4 @@ world:
   file: worlds/wall_following.wbt
   max-duration: 70
   metric: percent
-dockerCompose: theia:webots-project/controllers/wall_following/
+dockerCompose: theia:webots-project/controllers/wall_following_advanced/
