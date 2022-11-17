@@ -128,7 +128,7 @@ int main(int argc, char **argv) {
     sprintf(str_buffer, "stop:%.2f", 100 * metric->performance);
     wb_robot_wwi_send_text(str_buffer);
 
-    printf("performance_line:%f\n", metric->performance);
+    printf("performance:%f\n", metric->performance);
 
     wb_supervisor_simulation_set_mode(WB_SUPERVISOR_SIMULATION_MODE_PAUSE);
     free_wall_following_metric(metric);
